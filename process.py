@@ -40,7 +40,8 @@ Answer:"""
 def ask_llama(prompt):
     response = ollama.chat(
         model='llama3.1',
-        messages=[{'role': 'user', 'content': prompt}]
+        messages=[{'role': 'user', 'content': prompt}],
+        options={"temperature": 0.0}
     )
     return response['message']['content']
 
