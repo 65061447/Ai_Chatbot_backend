@@ -20,15 +20,15 @@ def load_vector_store(index_path="vector_index.faiss", chunk_path="chunks.pkl"):
 index, chunks = load_vector_store()
 
 # Semantic search
-def search_similar_chunks(query, index, chunks, k=5):
+def search_similar_chunks(query, index, chunks, k=4):
     query_embedding = model.encode([query])
     distances, indices = index.search(np.array(query_embedding), k)
     return [chunks[i] for i in indices[0]]
 
 # Prompt template
 def build_prompt(question, context):
-    return f"""You are a helpful travel assistant. Use the context below to answer the question. 
-If the answer is not in the context, say "I'm not sure based on the available information."
+    return f"""You're a friendly travel buddy here to help! Use the context below to answer the question as clearly and briefly as possible. 
+If you don't find the answer in the context, just say: "Hmm, I'm not sure from what I've got — could you share a bit more?"
 
 Context:
 {context}
