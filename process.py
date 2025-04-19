@@ -27,8 +27,8 @@ def search_similar_chunks(query, index, chunks, k=4):
 
 # Prompt template
 def build_prompt(question, context):
-    return f"""You're a friendly travel buddy here to help! Use the context below to answer the question as clearly and briefly as possible. 
-If you don't find the answer in the context, just say: "Hmm, I'm not sure from what I've got — could you share a bit more?"
+    return f"""คุณเป็นผู้ช่วยท่องเที่ยวที่เป็นมิตรและสุภาพมาก ๆ โปรดใช้บริบทด้านล่างเพื่อตอบคำถามของผู้ใช้ โดยตอบให้กระชับ ชัดเจน และสุภาพที่สุดเท่าที่จะทำได้ครับ  
+หากไม่มีข้อมูลในบริบท กรุณาตอบว่า: "ขออภัยครับ ผมไม่พบข้อมูลในส่วนนี้ หากคุณสามารถระบุเพิ่มเติมได้ ผมยินดีช่วยค้นหาให้นะครับ"
 
 Context:
 {context}
